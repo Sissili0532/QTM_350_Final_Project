@@ -1,6 +1,7 @@
 ---
 title: "Economic Growth, Education, and Fertility: A Cross-National Analysis (2020-2024)"
 author: "Anny Huang (), Rola Ke (2609319), Sissi Li (2608780), Vicki Lin (2550766), Chrissy Wang ()"
+bibliography: references.bib
 quarto-python: "/opt/anaconda3/envs/wb-analysis-env/bin/python"
 format:
   html:
@@ -44,7 +45,7 @@ The project utilizes a relational data structure where country-specific metadata
 
 We have selected six countries that represent a broad spectrum of the global economic landscape: **Switzerland, Italy, Brazil, Malaysia, India, and Niger**.
 
-<<<<<<< HEAD
+
 ## Data Analysis
 This section evaluates the statistical relationship between national development indicators and adolescent fertility. Our analysis employs two primary methodologies: Descriptive Trend Analysis to visualize longitudinal shifts and Multiple Linear Regression to quantify the specific impact of education versus economic wealth.
 
@@ -109,7 +110,6 @@ Secondary Education (The Critical Pivot): This tier shows the strongest diagonal
 
 Tertiary Education (The Development Characteristic): Tertiary data is often unavailable for ultra-low-income nations, and where available, the trend line flattens. This indicates that while tertiary education is a hallmark of high-GDP nations, it occurs too late in the life cycle to act as a primary driver for reducing adolescent births.
 
-
 ## Discussion:
 
 1. Beyond Wealth: The Empowerment Effect
@@ -131,7 +131,16 @@ Based on the transition zone identified in India and Malaysia, policy interventi
 Furthermore, the findings suggest that the most effective deterrent to adolescent fertility is not merely "being in school," but specifically staying in school through the teenage years. While primary education provides basic literacy, secondary education offers the cognitive development and vocational potential necessary to shift a young woman's opportunity cost. In the "Transition Zone," the sharp decline in fertility suggests that when a society reaches a critical mass of secondary enrollment (approx. 60–70%), it triggers a cultural shift toward delayed childbearing.
 
 
-## Conclusion
+## Conclusion:
+
+The cross-national analysis of Switzerland, Italy, Brazil, Malaysia, India, and Niger from 2020 to 2024 confirms that while economic growth creates the necessary environment for development, it is secondary educational attainment that serves as the functional engine for reducing adolescent fertility. Our findings validate the "Quantity-Quality Trade-off" theory, demonstrating that as nations move into the "Transition Zone," the rising opportunity cost of early childbearing—facilitated by school retention—outpaces the impact of raw GDP growth.
+
+The data reveals three distinct developmental stages:
+- Baseline Saturation: Primary education is a foundational requirement but no longer a significant differentiator for fertility rates in modern emerging economies.
+- The Critical Pivot: Secondary education provides the strongest "protective effect," with the most dramatic fertility declines occurring when enrollment surpasses the 60-70% threshold.
+- High-Income Stability: At advanced development stages, both wealth and education reach a plateau where fertility rates stabilize at a natural floor.
+
+Niger’s status as an outlier underscores a vital policy lesson: economic aid and GDP growth alone are insufficient if not accompanied by structural investments in secondary schooling. For global policymakers, the "tipping point" for stabilizing population growth and empowering young women lies not just in getting children into classrooms, but in ensuring they remain there through their teenage years. Future research should investigate the specific qualitative factors within secondary curricula—such as comprehensive health literacy and vocational training—that most effectively reinforce this demographic transition.
 
 ## Appendix 1:
 
@@ -263,5 +272,4 @@ plt.show()
 ```
 
 
-=======
->>>>>>> e8b83a8fe8a6483eceb36c00ed2eeaf871d364ab
+## Reference
