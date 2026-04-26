@@ -2,6 +2,8 @@
 title: "Economic Growth, Education, and Fertility: A Cross-National Analysis (2020-2024)"
 author: "Anny Huang (), Rola Ke (2609319), Sissi Li (2608780), Vicki Lin (2550766), Chrissy Wang ()"
 bibliography: references.bib
+nocite: |
+  @*
 quarto-python: "/opt/anaconda3/envs/wb-analysis-env/bin/python"
 format:
   html:
@@ -10,6 +12,7 @@ format:
   pdf:
     documentclass: article
     geometry: margin=1in
+    
 ---
 
 ## Introduction
