@@ -1,0 +1,131 @@
+---
+title: "Economic Growth, Education, and Fertility: A Cross-National Analysis (2020-2024)"
+author: "Anny Huang (), Rola Ke (2609319), Sissi Li (2608780), Vicki Lin (2550766), Chrissy Wang ()"
+quarto-python: "/opt/anaconda3/envs/wb-analysis-env/bin/python"
+format:
+  html:
+    embed-resources: true
+    toc: true
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+---
+
+## Introduction
+
+This report investigates the complex interplay between economic prosperity, educational attainment, and demographic shifts across six distinct national contexts: Switzerland, Italy, Brazil, Malaysia, India, and Niger. By analyzing World Bank World Development Indicators (WDI) from 2020 to 2024, we examine how Gross Domestic Product (GDP) per capita and school enrollment rates at the primary, secondary, and tertiary levels influence adolescent fertility rates.
+
+The framework for this study is grounded in the 'Quantity-Quality Trade-off' theory, which posits that adolescent fertility rates are primarily shaped by the synergy between economic prosperity and educational access. As explored in the Journal of Economic Growth, rising national wealth increases the opportunity cost of early childbearing, while higher educational requirements in the labor market create a functional incentive for adolescents to remain in school, leading to a measurable decline in fertility.
+
+Our analysis spans the full spectrum of the Human Development Index:
+- High-Income Stability: Switzerland and Italy.
+- The Transition Zone: Malaysia, Brazil, and India.
+- Structural Challenges: Niger.
+
+Through this cross-national lens, we aim to identify whether secondary education serves as a universal "tipping point" for lowering fertility, or if the relationship is moderated by the specific economic baseline of the country.
+
+
+## Data Description
+
+The data for this analysis is sourced from the **World Bank World Development Indicators (WDI)** database, spanning the period from **2020 to 2024**. This timeframe allows for an examination of post-pandemic economic recovery and its immediate effects on social metrics. 
+
+The dataset was programmatically retrieved using the `wbgapi` library. This approach ensures high data integrity and reproducibility for longitudinal analysis.
+
+#### Selected Indicators
+Our analysis focuses on key development metrics to explore how investments in education and economic stability influence national adolescent fertility rate.
+
+- **GDP per Capita (`NY.GDP.PCAP.CD`):** Measured in current US dollars, providing the economic baseline for each nation.
+- **Primary Education (`SE.PRM.ENRR`):** Total enrollment in primary education (% gross).
+- **Secondary Education (`SE.SEC.ENRR`):** Total enrollment in secondary education (% gross).
+- **Tertiary Education (`SE.TER.ENRR`):** Total enrollment in higher education (% gross).
+- **Adolescent Fertility Rate (`SP.ADO.TFRT`):** The number of births per 1,000 women ages 15-19, serving as a key indicator of social development.
+
+The project utilizes a relational data structure where country-specific metadata is linked to time-series development observations. This structure allows for efficient querying and visualization of trends across different economic tiers.
+
+We have selected six countries that represent a broad spectrum of the global economic landscape: **Switzerland, Italy, Brazil, Malaysia, India, and Niger**.
+
+## Data Analysis
+This section evaluates the statistical relationship between national development indicators and adolescent fertility. Our analysis employs two primary methodologies: Descriptive Trend Analysis to visualize longitudinal shifts and Multiple Linear Regression to quantify the specific impact of education versus economic wealth.
+
+1. Descriptive Trends and the "Transition Zone"
+
+Initial visualization of the data reveals a stark divergence in demographic trajectories based on income classification.
+
+High-Income Stability: Switzerland and Italy exhibit a "floor effect," where adolescent fertility remains consistently low (under 5 births per 1,000) regardless of minor fluctuations in GDP. In these contexts, secondary and tertiary enrollment rates are near-universal, suggesting that the demographic transition is complete.
+
+The Transition Zone: Malaysia, Brazil, and India represent the most dynamic segment of our study. In these nations, we observe a strong inverse correlation between secondary education and fertility. As enrollment rates crossed specific thresholds—particularly in Malaysia—the adolescent fertility rate showed the most significant year-over-year declines.
+
+Structural Stagnation: Niger represents a critical outlier where high adolescent fertility persists alongside lower secondary enrollment, illustrating the "Quantity-Quality Trade-off" in its early stages.
+
+2. Regression Results and Statistical Significance
+
+To determine which factor—wealth or education—is the primary driver of demographic change, we fitted a multiple linear regression model using statsmodels.
+
+Key Findings:
+
+Secondary Education (p=0.015): This variable emerged as a statistically significant predictor of lower fertility. The coefficient indicates that for every 1-unit increase in secondary enrollment percentage, the adolescent fertility rate is predicted to drop by nearly 1 full birth per 1,000 women (B=−0.9465).
+
+Log GDP per Capita (p=0.293): Surprisingly, once education is controlled for, GDP per capita does not have a statistically significant independent effect on fertility in our sample. This suggests that while wealth provides the resources to build schools, it is the educational attainment itself—rather than raw economic growth—that functionally reduces fertility rates.
+
+3. Model Interpretation
+
+The model’s F-statistic confirms that the overall regression is highly significant, explaining a substantial portion of the variance in fertility across the six nations. The findings suggest that the "protective effect" of keeping adolescents in school is a more direct and reliable mechanism for demographic change than general economic expansion.
+
+## Results & Discussion
+
+## Conclusion
+
+## Appendix 1:
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| label: descriptive-stats
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load cleaned long-format data
+df = pd.read_csv('/Users/sissili/Desktop/QTM350/QTM_350_Final_Project/QTM350_Final_Project_Data/cleaned_final_project_data_long.csv')
+
+# Create the Education vs. Fertility Trend Plot
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=df, x='secondary_edu', y='fertility', hue='Country', style='Country', s=100)
+plt.title('Adolescent Fertility Rate vs. Secondary Education Enrollment (2020-2024)')
+plt.xlabel('Secondary Education Enrollment (% Gross)')
+plt.ylabel('Adolescent Fertility (per 1,000 women)')
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+plt.show()
+```
+
+## Appendix 2:
+```{python}
+#| echo: true
+#| code-fold: true
+#| label: regression-modeling
+
+import statsmodels.api as sm
+import numpy as np
+
+# 2. Create log variable
+# Adding a small constant (1) ensures we don't take log(0)
+df['log_gdp'] = np.log(df['gdp'] + 1)
+
+# 3. CRITICAL: Select only the columns needed and drop rows with ANY missing values
+reg_data = df[['fertility', 'log_gdp', 'secondary_edu']].dropna()
+
+# 4. Define variables from the cleaned subset
+y = reg_data['fertility']
+X = reg_data[['log_gdp', 'secondary_edu']]
+X = sm.add_constant(X)
+
+# 5. Fit the Model
+model = sm.OLS(y, X).fit()
+print(model.summary())
+```
+
+
+

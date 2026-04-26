@@ -44,6 +44,7 @@ The project utilizes a relational data structure where country-specific metadata
 
 We have selected six countries that represent a broad spectrum of the global economic landscape: **Switzerland, Italy, Brazil, Malaysia, India, and Niger**.
 
+<<<<<<< HEAD
 ## Data Analysis
 This section evaluates the statistical relationship between national development indicators and adolescent fertility. Our analysis employs two primary methodologies: Descriptive Trend Analysis to visualize longitudinal shifts and Multiple Linear Regression to quantify the specific impact of education versus economic wealth.
 
@@ -262,3 +263,5 @@ plt.show()
 ```
 
 
+=======
+>>>>>>> e8b83a8fe8a6483eceb36c00ed2eeaf871d364ab
