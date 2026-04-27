@@ -1,6 +1,6 @@
 ---
 title: "Economic Growth, Education, and Fertility: A Cross-National Analysis (2020-2024)"
-author: "Anny Huang (), Rola Ke (2609319), Sissi Li (2608780), Vicki Lin (2550766), Chrissy Wang ()"
+author: "Anny Huang (2550032), Rola Ke (2609319), Sissi Li (2608780), Vicki Lin (2550766), Chrissy Wang (2601180)"
 bibliography: references.bib
 nocite: |
   @*
@@ -27,7 +27,6 @@ Our analysis spans the full spectrum of the Human Development Index:
 - Structural Challenges: Niger.
 
 Through this cross-national lens, we aim to identify whether secondary education serves as a universal "tipping point" for lowering fertility, or if the relationship is moderated by the specific economic baseline of the country.
-
 
 ## Data Description
 
@@ -144,6 +143,8 @@ The data reveals three distinct developmental stages:
 - High-Income Stability: At advanced development stages, both wealth and education reach a plateau where fertility rates stabilize at a natural floor.
 
 Niger’s status as an outlier underscores a vital policy lesson: economic aid and GDP growth alone are insufficient if not accompanied by structural investments in secondary schooling. For global policymakers, the "tipping point" for stabilizing population growth and empowering young women lies not just in getting children into classrooms, but in ensuring they remain there through their teenage years. Future research should investigate the specific qualitative factors within secondary curricula—such as comprehensive health literacy and vocational training—that most effectively reinforce this demographic transition.
+
+A key limitation of this study is the relatively small and selective sample of countries, which may limit the generalizability of the findings across broader global contexts. By focusing on only six nations spanning different development tiers, the analysis may not fully capture regional heterogeneity, cultural influences, or policy differences that also shape adolescent fertility. Additionally, the use of aggregate national-level indicators (e.g., GDP per capita and school enrollment rates) obscures within-country variation, such as socioeconomic inequality, gender norms, and rural–urban disparities, which are likely critical drivers of fertility behavior. The observational nature of the data further restricts causal inference, as unmeasured confounding variables—such as access to reproductive healthcare or government policy interventions—may influence both education and fertility outcomes. Finally, the relatively short time frame (2020–2024) may not adequately reflect long-term demographic transitions, particularly given potential disruptions related to the COVID-19 pandemic .
 
 ## Appendix 1:
 
