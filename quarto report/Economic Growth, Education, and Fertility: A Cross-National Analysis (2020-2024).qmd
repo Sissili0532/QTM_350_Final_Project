@@ -22,9 +22,9 @@ This report investigates the complex interplay between economic prosperity, educ
 The framework for this study is grounded in the 'Quantity-Quality Trade-off' theory, which posits that adolescent fertility rates are primarily shaped by the synergy between economic prosperity and educational access. As explored in the Journal of Economic Growth, rising national wealth increases the opportunity cost of early childbearing, while higher educational requirements in the labor market create a functional incentive for adolescents to remain in school, leading to a measurable decline in fertility.
 
 Our analysis spans the full spectrum of the Human Development Index:
-- High-Income Stability: Switzerland and Italy.
-- The Transition Zone: Malaysia, Brazil, and India.
-- Structural Challenges: Niger.
+*   High-Income Stability: Switzerland and Italy.
+*   The Transition Zone: Malaysia, Brazil, and India.
+*   Structural Challenges: Niger.
 
 Through this cross-national lens, we aim to identify whether secondary education serves as a universal "tipping point" for lowering fertility, or if the relationship is moderated by the specific economic baseline of the country.
 
