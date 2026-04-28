@@ -2,4 +2,5 @@
 .Rproj.user
 .Rhistory
 .RData
-.Ruserdata
+.Ruserdata/.quarto/
+**/*.quarto_ipynb
